@@ -1,0 +1,17 @@
+FROM python:3.9
+
+RUN mkdir -p /backend/app
+
+WORKDIR /backend/app
+
+
+COPY src ./src
+COPY requirments.txt ./
+
+RUN pip install -r requirments.txt
+
+
+
+CMD ["python", "./src/api.py"]
+
+EXPOSE 8080
